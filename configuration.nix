@@ -132,13 +132,16 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  
+  # Enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs; [
     git
     vim
+    neovim
     wget
     curl
     lf
