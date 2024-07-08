@@ -9,10 +9,18 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./system/hardware/nvidia.nix
+      ./system/app/steam.nix
+      ./system/app/gamemode.nix
     ];
 
   # Enable nvidia drivers
   nvidia.enable = true;
+
+  # Enable steam
+  steam.enable = true;
+
+  # Enable feral gamemode
+  gamemode.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
