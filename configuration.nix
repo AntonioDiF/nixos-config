@@ -148,6 +148,11 @@
   ];
   environment.variables.EDITOR = "vim";
 
+  # Console configuration
+  environment.shells = with pkgs; [ bash zsh fish ];
+  users.defaultUserShell = pkgs.fish;
+  programs.fish.enable = true;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
