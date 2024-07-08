@@ -1,11 +1,9 @@
 { config, pkgs, ... }:
-let
-  myAliases = {
-    ll = "ls -l";
-    ".." = "cd ..";
-  };
-in
 {
+  imports = [
+    ./sh.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "adf";
@@ -74,18 +72,6 @@ in
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
-  };
-
-  # Bash configuration
-  programs.bash = {
-    enable = true;
-    shellAliases = myAliases;
-  };
-
-  # zsh configuration
-  programs.zsh = {
-    enable = true;
-    shellAliases = myAliases;
   };
 
   # Let Home Manager install and manage itself.
