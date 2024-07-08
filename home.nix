@@ -2,6 +2,7 @@
 {
   imports = [
     ./sh.nix
+    ./user/app/browser/chromium.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -73,6 +74,9 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+
+  # Set up browser
+  chromium.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

@@ -93,6 +93,11 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  
+  # Temporarily disable wayland in Mozilla to prevent it from crashing
+  environment.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = 0;
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
