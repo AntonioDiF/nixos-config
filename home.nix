@@ -3,6 +3,7 @@
   imports = [
     ./sh.nix
     ./user/app/browser/chromium.nix
+    ./user/app/communication/discord.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -24,7 +25,7 @@
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    pkgs.hello
+    # pkgs.hello
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -77,6 +78,11 @@
 
   # Set up browser
   chromium.enable = true;
+
+  # Set up Discord
+  discord.enable = true;
+  # Disable the next line when updating Discord
+  discord.useVencord = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
