@@ -2,6 +2,7 @@
 {
   imports = [
     ./sh.nix
+    ./user/app/terminal/tmux.nix
     ./user/app/browser/chromium.nix
     ./user/app/communication/discord.nix
   ];
@@ -83,6 +84,9 @@
   discord.enable = true;
   # Disable the next line when updating Discord
   discord.useVencord = true;
+
+  # tmux configuration
+  tmux.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
