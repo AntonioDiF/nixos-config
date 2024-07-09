@@ -47,9 +47,6 @@ in
 
 	# Misc
 
-	# Refresh status bar more often, from every 15s to 1s
-       set -g status-interval 1
-
 	## Focus events enabled for terminals that support them
         set -g focus-events on
 
@@ -61,6 +58,13 @@ in
 	
 	## Titles
         set -g set-titles on
+
+	## Timing
+
+	### Update status bar every second instead of every 15. Likely uses more energy
+        set -g status-interval 1
+	### Display panes for 3 seconds instead of 1
+	set -g display-panes-time 3000
 
         ## Status bar
 	set -g status-left-length 25
