@@ -81,9 +81,12 @@
   chromium.enable = true;
 
   # Set up Discord
-  discord.enable = true;
+
+  # Only enable the next lines if vesktop is not enabled in the system config
+
+  # discord.enable = true;
   # Disable the next line when updating Discord
-  discord.useVencord = true;
+  # discord.useVencord = true;
 
   # tmux configuration
   tmux.enable = true;

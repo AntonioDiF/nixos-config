@@ -11,6 +11,7 @@
       ./system/hardware/nvidia.nix
       ./system/app/steam.nix
       ./system/app/gamemode.nix
+      ./system/app/vesktop.nix
     ];
 
   # Enable nvidia drivers
@@ -21,6 +22,9 @@
 
   # Enable feral gamemode
   gamemode.enable = true;
+
+  # Enable discord (replacement)
+  vesktop.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
