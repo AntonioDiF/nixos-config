@@ -127,7 +127,7 @@
     curl
     lf
   ];
-  environment.variables.EDITOR = "vim";
+  environment.variables.EDITOR = "nvim";
 
   # Console configuration
   environment.shells = with pkgs; [ bash zsh fish ];
