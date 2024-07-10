@@ -39,6 +39,7 @@ in
       escapeTime = 0;
       historyLimit = 50000;
       aggressiveResize = true;
+      terminal = "tmux-256color";
       extraConfig = ''
         # Bindings
 

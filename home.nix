@@ -2,6 +2,7 @@
 {
   imports = [
     ./sh.nix
+    ./user/app/terminal/alacritty.nix
     ./user/app/terminal/tmux.nix
     ./user/app/browser/chromium.nix
     ./user/app/communication/discord.nix
@@ -87,6 +88,9 @@
   # discord.enable = true;
   # Disable the next line when updating Discord
   # discord.useVencord = true;
+
+  # alacritty configuration
+  alacritty.enable = true;
 
   # tmux configuration
   tmux.enable = true;
