@@ -3,6 +3,7 @@
   imports = [
     ./sh.nix
     ./user/app/terminal/alacritty.nix
+    ./user/app/terminal/kitty.nix
     ./user/app/terminal/tmux.nix
     ./user/app/terminal/nvim.nix
     ./user/app/browser/chromium.nix
@@ -90,8 +91,16 @@
   # Disable the next line when updating Discord
   # discord.useVencord = true;
 
-  # alacritty configuration
+  # terminal configuration
   alacritty.enable = true;
+  kitty = {
+    enable = true;
+    theme = "Thayer Bright"; # Best dark theme, good contrast. Probably not good at night
+    # theme = "Bluloco Dark"; # Slightly washed out ns
+    # theme = "Molokai"; # Good dark theme. Good for night use  
+    # theme = "spaceduck"; # Dark theme with high saturation, probably good for TN screens
+    # theme = "1984 Orwellian"; # Sepia theme. Probably good for day use
+  };
 
   # tmux configuration
   tmux.enable = true;
