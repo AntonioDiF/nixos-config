@@ -92,7 +92,7 @@
   # discord.useVencord = true;
 
   # terminal configuration
-  alacritty.enable = true;
+  # alacritty.enable = true;
   kitty = {
     enable = true;
     theme = "Thayer Bright"; # Best dark theme, good contrast. Probably not good at night
