@@ -13,10 +13,14 @@
       ./system/app/gamemode.nix
       ./system/app/vesktop.nix
       ./system/app/siyuan.nix
+      ./system/app/python.nix
     ];
 
   # Enable nvidia drivers
   nvidia.enable = true;
+
+  # Enable Python
+  python.enable = true;
 
   # Enable steam
   steam.enable = true;
