@@ -24,7 +24,8 @@ in
       viAlias = true;
       vimAlias = true;
       globals = {
-        mapleader = "<Space>";
+        mapleader = " ";
+        maplocalleader = " ";
       };
       options = {
         number = true;
@@ -37,16 +38,29 @@ in
         shiftwidth = 2;
         softtabstop = 2;
       };
+      mappings = {
+        normalVisualOp = {
+          ";" = "':'"; # vimscript between ' '
+        };
+        normal = {
+          # Telescope
+          "<leader>ff" = "require('telescope.builtin').find_files";
+          "<leader>fg" = "require('telescope.builtin').live_grep";
+          "<leader>fc" = "require('telescope.builtin').treesitter";
+          "<leader>fb" = "require('telescope.builtin').buffers";
+          "<leader>fh" = "require('telescope.builtin').help_tags";
+        };
+      };
       extraPlugins = [
       	pkgs.vimExtraPlugins.nvim-web-devicons
       ];
       plugins = {
         # Autocompletion
-        nvim-cmp = {
-          enable = true;
-          snippet.luasnip.enable = true;
-          mappingPresets = [ "insert" "cmdline" ];
-        };
+        # nvim-cmp = {
+          # enable = true;
+          # snippet.luasnip.enable = true;
+          # mappingPresets = [ "insert" "cmdline" ];
+        # };
 	      # coq = {
 	        # enable = true;
 	        # autoStart = true; 
@@ -79,10 +93,10 @@ in
 	      # nvim-tree = {
 	        # enable = true;
 	      # };
-	      # # Find files
-	      # telescope = {
-	        # enable = true;
-	      # };
+	      # Find files
+	      telescope = {
+	        enable = true;
+	      };
 	      # Parser generator tool. Improves highlight and might be prerequisite for LSPs 
         treesitter = {
           enable = true;
