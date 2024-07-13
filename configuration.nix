@@ -12,6 +12,7 @@
       ./system/app/steam.nix
       ./system/app/gamemode.nix
       ./system/app/vesktop.nix
+      ./system/app/siyuan.nix
     ];
 
   # Enable nvidia drivers
@@ -25,6 +26,9 @@
 
   # Enable discord (replacement)
   vesktop.enable = true;
+
+  # Enable siyuan
+  siyuan.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
