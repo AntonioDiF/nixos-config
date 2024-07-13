@@ -20,6 +20,13 @@ in
   config = mkIf cfg.enable {
     programs.nixneovim = {
       enable = true;
+      colorschemes = {
+        catppuccin = {
+          enable = true;
+          termColors = true;
+          dimInactive.enabled = true;
+        };
+      };
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
