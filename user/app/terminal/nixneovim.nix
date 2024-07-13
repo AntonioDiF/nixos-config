@@ -23,63 +23,67 @@ in
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
+      globals = {
+        mapleader = "<Space>";
+      };
       options = {
         number = true;
-	expandtab = true;
-	smartindent = true;
+        # relativenumber = true;
+        wildmode = "longest,list";
+        # cc = 88;
+        smartindent = true;
+        tabstop = 2;
+	      expandtab = true;
+        shiftwidth = 2;
+        softtabstop = 2;
       };
-      # extraConfig = ''
-        # set number relativenumber   " add line numbers showing relative next lines
-        # set wildmode=longest,list   " get bash-like tab completions
-        # set cc=88                   " mark columns that exceed 88 chars for good coding style
-        # filetype plugin indent on   " allows auto-indenting depending on file type
-        # set tabstop=2               " number of columns occupied by a tab character
-        # set expandtab               " convert tabs to white space
-        # set shiftwidth=2            " width for autoindents
-        # set softtabstop=2           " see multiple spaces as tabstops so <BS> does the right thing
-      # '';
       extraPlugins = [
       	pkgs.vimExtraPlugins.nvim-web-devicons
       ];
       plugins = {
         # Autocompletion
-	coq = {
-	  enable = true;
-	  autoStart = true; 
-	  installArtifacts = true;
-	};
-	# Dashboard
-	dashboard = {
-	  enable = true;
-	};
-	# Language Server Provider
+        nvim-cmp = {
+          enable = true;
+          snippet.luasnip.enable = true;
+          mappingPresets = [ "insert" "cmdline" ];
+        };
+	      # coq = {
+	        # enable = true;
+	        # autoStart = true; 
+	        # installArtifacts = true;
+	      # };
+	      # # Dashboard
+	      # dashboard = {
+	        # enable = true;
+	      # };
+	      # Language Server Provider
         lspconfig = {
           enable = true;
           servers = {
-	    lua-language-server.enable = true;
+            lua-language-server.enable = true;
             nil.enable = true;
           };
         };
-	# Several plugins
-	mini = {
-	  enable = true;
-	  # Keep sessions
-	  sessions = {
-	    enable = true;
-	    extraConfig = {
-	      autoread = true;
-	    };
-	  };
-	};
-	# File explorer
-	nvim-tree = {
-	  enable = true;
-	};
-	# Find files
-	telescope = {
-	  enable = true;
-	};
-	# 
+	      # # Several plugins
+	      # mini = {
+	        # enable = true;
+	        # # Keep sessions
+	        # sessions = {
+	          # enable = true;
+	          # extraConfig = {
+	            # autoread = true;
+	          # };
+	        # };
+	      # };
+	      # # File explorer
+	      # nvim-tree = {
+	        # enable = true;
+	      # };
+	      # # Find files
+	      # telescope = {
+	        # enable = true;
+	      # };
+	      # Parser generator tool. Improves highlight and might be prerequisite for LSPs 
         treesitter = {
           enable = true;
           indent = true;

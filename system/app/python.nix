@@ -19,7 +19,7 @@ in
 
   config = mkIf cfg.enable {
     environment.systemPackages = [
-      pkgs.python3
+      pkgs.python3Full
     ];
   };
 }
