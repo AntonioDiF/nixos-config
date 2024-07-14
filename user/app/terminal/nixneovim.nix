@@ -80,16 +80,19 @@ in
       ];
       plugins = {
         # Autocompletion
-        # nvim-cmp = {
-          # enable = true;
-          # snippet.luasnip.enable = true;
-          # mappingPresets = [ "insert" "cmdline" ];
-        # };
-        # coq = {
-          # enable = true;
-          # autoStart = true;
-          # installArtifacts = true;
-        # };
+        nvim-cmp = {
+          enable = true;
+          snippet.luasnip.enable = true;
+          mappingPresets = [ "insert" ];
+          mapping = {
+            "<CR>" = "cmp.mapping.confirm({ select = true })";
+          };
+          sources = {
+            luasnip.enable = true;
+            nvim_lsp.enable = true;
+            treesitter.enable = true;
+          };
+        };
         # # Dashboard
         # dashboard = {
           # enable = true;
