@@ -27,8 +27,8 @@ in
       enable = true;
       theme = cfg.theme;
       font = {
-        name = "DejaVu Sans";
-        package = pkgs.dejavu_fonts;
+        name = "CaskaydiaCove Nerd Font";
+        package = pkgs.nerdfonts;
       };
       settings = {
         background_opacity = lib.mkForce "0.85";

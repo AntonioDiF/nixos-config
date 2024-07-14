@@ -5,7 +5,7 @@
     ./user/app/terminal/alacritty.nix
     ./user/app/terminal/kitty.nix
     ./user/app/terminal/tmux.nix
-    ./user/app/terminal/nvim.nix
+    ./user/app/terminal/nixneovim.nix
     ./user/app/browser/chromium.nix
     ./user/app/communication/discord.nix
   ];
@@ -105,8 +105,8 @@
   # tmux configuration
   tmux.enable = true;
 
-  # nvim configuration
-  nvim.enable = true;
+  # nixneovim configuration
+  nixneovim.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
