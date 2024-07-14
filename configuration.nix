@@ -134,8 +134,14 @@
     wget
     curl
     lf
+    nerdfonts
   ];
   environment.variables.EDITOR = "nvim";
+
+  # Fonts configuration
+  fonts.packages = with pkgs; [
+    nerdfonts
+  ];
 
   # Console configuration
   environment.shells = with pkgs; [ bash zsh fish ];

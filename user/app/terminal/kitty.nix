@@ -27,7 +27,7 @@ in
       enable = true;
       theme = cfg.theme;
       font = {
-        name = "CaskaydiaCove";
+        name = "CaskaydiaCove Nerd Font";
         package = pkgs.nerdfonts;
       };
       settings = {
