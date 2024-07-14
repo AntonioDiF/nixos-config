@@ -58,8 +58,11 @@ in
           "<leader>fh" = "require('telescope.builtin').help_tags";
         };
       };
-      extraPlugins = [
-      	pkgs.vimExtraPlugins.nvim-web-devicons
+      extraPlugins = with pkgs.vimExtraPlugins; [
+        {
+      	  plugin = nvim-web-devicons;
+          optional = false;
+        }
       ];
       plugins = {
         # Autocompletion
@@ -108,6 +111,10 @@ in
         treesitter = {
           enable = true;
           indent = true;
+        };
+        # Show context for current code line (classes, function) when out of the screen
+        treesitter-context = {
+          enable = true;
         };
       };
     };
