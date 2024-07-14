@@ -41,7 +41,7 @@ in
         # cc = 88;
         smartindent = true;
         tabstop = 2;
-	      expandtab = true;
+        expandtab = true;
         shiftwidth = 2;
         softtabstop = 2;
       };
@@ -60,7 +60,7 @@ in
       };
       extraPlugins = with pkgs.vimExtraPlugins; [
         {
-      	  plugin = nvim-web-devicons;
+          plugin = nvim-web-devicons;
           optional = false;
         }
       ];
@@ -71,16 +71,16 @@ in
           # snippet.luasnip.enable = true;
           # mappingPresets = [ "insert" "cmdline" ];
         # };
-	      # coq = {
-	        # enable = true;
-	        # autoStart = true; 
-	        # installArtifacts = true;
-	      # };
-	      # # Dashboard
-	      # dashboard = {
-	        # enable = true;
-	      # };
-	      # Language Server Provider
+        # coq = {
+          # enable = true;
+          # autoStart = true;
+          # installArtifacts = true;
+        # };
+        # # Dashboard
+        # dashboard = {
+          # enable = true;
+        # };
+        # Language Server Provider
         lspconfig = {
           enable = true;
           servers = {
@@ -88,26 +88,31 @@ in
             nil.enable = true;
           };
         };
-	      # # Several plugins
-	      # mini = {
-	        # enable = true;
-	        # # Keep sessions
-	        # sessions = {
-	          # enable = true;
-	          # extraConfig = {
-	            # autoread = true;
-	          # };
-	        # };
-	      # };
-	      # # File explorer
-	      # nvim-tree = {
-	        # enable = true;
-	      # };
-	      # Find files
-	      telescope = {
-	        enable = true;
-	      };
-	      # Parser generator tool. Improves highlight and might be prerequisite for LSPs 
+        # # Several plugins
+        # mini = {
+          # enable = true;
+          # # Keep sessions
+          # sessions = {
+            # enable = true;
+            # extraConfig = {
+              # autoread = true;
+            # };
+          # };
+        # };
+        # File explorer
+        nvim-tree = {
+          enable = true;
+          disableNetrw = true;
+          openOnTab = true;
+          git = {
+            enable = true;
+          };
+        };
+        # Find files
+        telescope = {
+          enable = true;
+        };
+        # Parser generator tool. Improves highlight and might be prerequisite for LSPs
         treesitter = {
           enable = true;
           indent = true;
