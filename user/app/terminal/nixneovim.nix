@@ -50,12 +50,26 @@ in
           ";" = "':'"; # vimscript between ' '
         };
         normal = {
+          # Sessions
+          "<leader>sl" = "function() MiniSessions.select() end";
+          "<leader>sw" = ''
+            function()
+              local session_name = vim.fn.input("Enter session name: ")
+              if session_name ~= nil and session_name ~= ''' then
+                require('nvim-tree.api').tree.close_in_all_tabs()
+                MiniSessions.write(session_name)
+              end
+            end
+            '';
           # Telescope
           "<leader>ff" = "require('telescope.builtin').find_files";
           "<leader>fg" = "require('telescope.builtin').live_grep";
           "<leader>fc" = "require('telescope.builtin').treesitter";
           "<leader>fb" = "require('telescope.builtin').buffers";
           "<leader>fh" = "require('telescope.builtin').help_tags";
+          # Tree
+          "<leader>tt" = "require('nvim-tree.api').tree.toggle";
+          "<leader>tf" = "require('nvim-tree.api').tree.find_file"; # Find current file
         };
       };
       extraPlugins = with pkgs.vimExtraPlugins; [
@@ -88,17 +102,17 @@ in
             nil.enable = true;
           };
         };
-        # # Several plugins
-        # mini = {
-          # enable = true;
-          # # Keep sessions
-          # sessions = {
-            # enable = true;
-            # extraConfig = {
-              # autoread = true;
-            # };
-          # };
-        # };
+        # Several plugins
+        mini = {
+          enable = true;
+          # Keep sessions
+          sessions = {
+            enable = true;
+            extraConfig = {
+              autoread = true;
+            };
+          };
+        };
         # File explorer
         nvim-tree = {
           enable = true;
