@@ -9,7 +9,7 @@ let
 in
 {
   imports = [
-    ./w11.nix
+    ./x11.nix
   ];
 
   options.gnome = {

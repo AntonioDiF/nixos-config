@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./system/hardware/nvidia.nix
       ./system/wm/gnome.nix
+      ./system/wm/hyprland.nix
       ./system/app/steam.nix
       ./system/app/gamemode.nix
       ./system/app/vesktop.nix
@@ -69,6 +70,7 @@
 
   # Window/Desktop Manager
   gnome.enable = true;
+  # hyprland.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -132,6 +134,14 @@
   # Fonts configuration
   fonts.packages = with pkgs; [
     nerdfonts
+    fira-code
+    fira-code-symbols
+    font-awesome
+    liberation_ttf
+    mplus-outline-fonts.githubRelease
+    noto-fonts
+    noto-fonts-emoji
+    proggyfonts
   ];
 
   # Console configuration
